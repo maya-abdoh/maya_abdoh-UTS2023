@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage5</title>
+  <meta charset="UTF-8">
+  <style>
+    #companydescription {
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Isra'a Software & Computer Co.</h1>
+
+  <p id="companydescription">Isra' Software and computer company was established in 1997 in Nablus as a specialized in the production of software at Palestine and Arab Countries</p>
+
+  <button style="display: block;" type="button" onclick="changeTextStyle()">Change Text Style</button>
+
+  <img id="company-logo" src="companylogo.png" style="display: block; margin-top: 25px; width: 450px; height: 150px;">
+
+  <p>
+    <button type="button" onclick="changeCompany('ISCOSOFT', 'companylogo.png')">ISCOSOFT</button>
+    <button type="button" onclick="changeCompany('GOOGLE', 'Google.png')">GOOGLE</button>
+    <button type="button" onclick="changeCompany('MICROSOFT', 'microsoft.jpg')">MICROSOFT</button>
+  </p>
+  <p id="clicked-button"></p>
+  <script>
+    function changeTextStyle() {
+      var description = document.getElementById("companydescription");
+      description.style.fontSize = "25px";
+      description.style.color = "blue";
+      description.style.backgroundColor = "yellow";
+    }
+    function changeCompany(company, imageSrc) {
+    var logo = document.getElementById("company-logo");
+    logo.src = imageSrc;
+    var previousButton = document.querySelector(".active");
+    if (previousButton) {
+    previousButton.innerHTML = previousButton.dataset.company;
+    previousButton.classList.remove("active");
+      }
+     event.target.innerHTML = company;
+     event.target.classList.add("active");
+     event.target.dataset.company = company;
+      var clickedButton = document.getElementById("clicked-button");
+      clickedButton.innerHTML = "Clicked button: " + company;
+    }
+  </script>
+</body>
+</html>
+
