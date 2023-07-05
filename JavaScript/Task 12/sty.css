@@ -1,0 +1,23 @@
+table {
+  border: solid black 1px;
+  width: 450px;
+
+}
+
+th, td {
+  border: solid black 1px;
+
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button{
+height: 40px;
+width: 100px;
+}
+#result {
+  font-weight: bold;
+}
