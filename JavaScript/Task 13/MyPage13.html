@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="Js.js"></script>
+
+  <title>MyPage13</title>
+  <style>
+     table {
+      border-collapse: collapse;
+      border: 1px solid black;
+      padding: 5px;
+      margin-bottom: 50px;
+    }
+
+    th, td {
+      border: 1px solid black;
+    }
+    .div {
+      border: 1px solid black;
+      width: 350px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+    table img {
+      width: 200px;
+      height: auto;
+    }
+ 
+    
+  </style>
+</head>
+<body>
+    <div class="div">
+        <h3>Get User Info Using Async/ Await</h3>
+    <table>
+        <tr>
+          <td>ID:</td>
+          <td><input type="text" id="userId"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button onclick="getUserInfo()">Get User Info</button>
+            <button onclick="resetForm()">Reset</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td id="name"></td>
+        </tr>
+        <tr>
+          <td>User Name:</td>
+          <td id="userName"></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td id="email"></td>
+        </tr>
+        <tr>
+          <td>City:</td>
+          <td id="city"></td>
+        </tr>
+        <tr>
+          <td>Street:</td>
+          <td id="street"></td>
+        </tr>
+        <tr>
+          <td>Zipcode:</td>
+          <td id="zipcode"></td>
+        </tr>
+        <tr>
+          <td>User Result:</td>
+          <td id="userResult"></td>
+        </tr>
+      </table>
+      <h3>Get Image Info Using Async/ Await</h3>
+
+      <table>
+        <tr>
+          <td>ID:</td>
+          <td><input type="text" id="imageId"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button onclick="getImageInfo()">Get Image</button>
+            <button onclick="reset()">Reset</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Album ID:</td>
+          <td id="albumId"></td>
+        </tr>
+        <tr style="height: 150px;">
+          <td style="height: 150px;">Image:</td>
+          <td id="image"></td>
+        </tr>
+        <tr>
+          <td>Image Result:</td>
+          <td id="imageResult"></td>
+        </tr>
+      </table>
+      </div>
+</body>
+</html>
