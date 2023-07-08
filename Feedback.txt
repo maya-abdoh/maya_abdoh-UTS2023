@@ -35,3 +35,33 @@ These Notes About Responsive BTW.
 Task 10 :
 File Naming is cruical in the field, it helps a lot in maintaining, reusing, and when someone else uses our code.
 Arabic And English File names is flipped, Otherwise Perfect.
+
+Task 11 :
+No Comment, Perfect.
+
+Task 12 :
+My only comment is to another check, if both fahrenheit and celsius values are entered return error
+i guess the task wasn't clear, and you handled it nicely
+Great Job.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
