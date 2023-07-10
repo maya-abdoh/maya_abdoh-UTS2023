@@ -1,20 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>Console Demo</title>
-  <script>
-    console.log("My Info");
-    console.warn("My Warning");
-    console.error("My Error");
-    
-    console.table([
-      { Name: "John", Age: 28, City: "New York" },
-      { Name: "Alice", Age: 32, City: "London" },
-      { Name: "Bob", Age: 25, City: "Paris" }
-    ]);
-  </script>
-</head>
-<body>
-  <h1>Console Demo!</h1>
-</body>
+  <head>
+    <title>MyPage14</title>
+  </head>
+  <body>
+    <h1>Console Demo!</h1>
+    <button onclick="logInfo()">log info</button>
+    <button onclick="logWarning()">log Warning</button>
+    <button onclick="logError()">log error</button>
+    <button onclick="logTable()">log table</button>
+    <script>
+      function logInfo() {
+        console.log("My Info");
+      }
+      
+      function logWarning() {
+        console.warn("My Warning");
+      }
+      
+      function logError() {
+        console.error("My Error");
+      }
+      
+      function logTable() {
+        const artists = [
+          {
+            Name: 'Zeyad Abed Aljalil',
+            Age: '36',
+            Address: 'Nablus, Beit Dajan'
+          },
+          {
+            Name: 'Ahmad Hanani',
+            Age: '35',
+            Address: 'Nablus, Beit Foreeq'
+          },
+          {
+            Name: 'Ahmad Eran',
+            Age: '39',
+            Address: 'Nablus'
+          }
+        ];
+        console.table(artists);
+      }
+    </script>
+  </body>
 </html>
+
