@@ -1,49 +1,50 @@
 
 async function getUserInfo() {
-    const userIdInput = document.getElementById("userId");
-    const userId = userIdInput.value;
+  const userIdInput = document.getElementById("userId");
+  const userId = userIdInput.value;
 
-    if (userId === "") {
-      alert("Please enter a user ID");
-      return;
-    }
-
-    try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
-      const user = await response.json();
-
-      const nameCell = document.getElementById("name");
-      const userNameCell = document.getEl8ementById("userName");
-      const emailCell = document.getElementById("email");
-      const cityCell = document.getElementById("city");
-      const streetCell = document.getElementById("street");
-      const zipcodeCell = document.getElementById("zipcode");
-      const userResultCell = document.getElementById("userResult");
-
-      if (user.id) {
-        nameCell.textContent = user.name;
-        userNameCell.textContent = user.username;
-        emailCell.textContent = user.email;
-        cityCell.textContent = user.address.city;
-        streetCell.textContent = user.address.street;
-        zipcodeCell.textContent = user.address.zipcode;
-        userResultCell.textContent = "User Found";
-        userResultCell.style.color = "green";
-      } else {
-        nameCell.textContent = "";
-        userNameCell.textContent = "";
-        emailCell.textContent = "";
-        cityCell.textContent = "";
-        streetCell.textContent = "";
-        zipcodeCell.textContent = "";
-        userResultCell.textContent = "User Not Found";
-        userResultCell.style.color = "red";
-      }
-    } catch (error) {
-      console.error(error);
-      alert("An error occurred while fetching user info.");
-    }
+  if (userId === "") {
+    alert("Please enter a user ID");
+    return;
   }
+
+  try {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+    const user = await response.json();
+
+    const nameCell = document.getElementById("name");
+    const userNameCell = document.getElementById("userName");
+    const emailCell = document.getElementById("email");
+    const cityCell = document.getElementById("city");
+    const streetCell = document.getElementById("street");
+    const zipcodeCell = document.getElementById("zipcode");
+    const userResultCell = document.getElementById("userResult");
+
+    if (user.id) {
+      nameCell.textContent = user.name;
+      userNameCell.textContent = user.username;
+      emailCell.textContent = user.email;
+      cityCell.textContent = user.address.city;
+      streetCell.textContent = user.address.street;
+      zipcodeCell.textContent = user.address.zipcode;
+      userResultCell.textContent = "User Found";
+      userResultCell.style.color = "green";
+    } else {
+      nameCell.textContent = "";
+      userNameCell.textContent = "";
+      emailCell.textContent = "";
+      cityCell.textContent = "";
+      streetCell.textContent = "";
+      zipcodeCell.textContent = "";
+      userResultCell.textContent = "User Not Found";
+      userResultCell.style.color = "red";
+    }
+  } catch (error) {
+    console.error(error);
+    alert("An error occurred while fetching user info.");
+  }
+}
+
   async function getImageInfo() {
   const imageIdInput = document.getElementById("imageId");
   const imageId = imageIdInput.value;
