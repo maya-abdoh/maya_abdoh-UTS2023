@@ -67,6 +67,10 @@
       -webkit-box-flex: 1;
       flex: 1;
     }
+    .product-device{
+      display: none;
+    }
+
   }
   
   .overflow-hidden { overflow: hidden; }
