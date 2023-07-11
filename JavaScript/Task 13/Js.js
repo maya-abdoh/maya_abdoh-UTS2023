@@ -13,7 +13,7 @@ async function getUserInfo() {
       const user = await response.json();
 
       const nameCell = document.getElementById("name");
-      const userNameCell = document.getElementById("userName");
+      const userNameCell = document.getEl8ementById("userName");
       const emailCell = document.getElementById("email");
       const cityCell = document.getElementById("city");
       const streetCell = document.getElementById("street");
