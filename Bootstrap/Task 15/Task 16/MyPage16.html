@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPage16</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="login-register-links">
+        <a class="nav-link ml-1  text-white" href="#">Log In</a>
+        <a class="nav-link  text-white" href="#">Register</a>
+      </div>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="font-family: Georgia, serif;    ">
+        <div class="container d-flex justify-content-center">
+          <a class="navbar-brand" href="#" aria-label="Product">
+              <title>Product</title>
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
+          </a>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav text-center">
+              <li class="nav-item">
+                <a class="nav-link ml-3 mt-3 text-white" href="#">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link ml-3 mt-3 text-white" href="#">ABOUT</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link ml-3 mt-3 text-white dropdown-toggle" href="#" id="recipeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  RECIPE <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="recipeDropdown">
+                  <a class="dropdown-item" href="#" onclick="toggleItemss('APETZERS')">APETZERS</a>
+                  <a class="dropdown-item" href="#" onclick="toggleItemss('DESERTS')">DESERTS</a>
+                  <a class="dropdown-item" href="#" onclick="toggleItemss('EGG')">EGG</a>
+                  <a class="dropdown-item" href="#" onclick="toggleItemss('FISH')">FISH</a>
+                  <a class="dropdown-item" href="#" onclick="toggleItemss('MAIN')">MAIN</a>
+                  <a class="dropdown-item" href="#" onclick="toggleItemss('PIZZA')">PIZZA</a>
+                  <a class="dropdown-item" href="#" onclick="toggleItemss('SALAD')">SALAD</a>
+                  <a class="dropdown-item" href="#" onclick="toggleItemss('SNACKS')">SNACKS</a>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link mt-3 text-white" href="#">FEEDBACK</a>
+              </li>
+              <li class="nav-item">
+                <div class="text-center">
+                  <img src="bob.png" class="img-fluid" style="  max-width: 200px;">
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link ml-3 mt-3 text-white" href="#">F.A.Q</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mt-3 text-white" href="#">CONTACT US</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+</div>
+<div id="carouselContent" class="carousel mt-5" role="listbox" style=" font-family: Georgia, serif;margin-left:320px; width: 1000px;display:  flex;">
+ 
+  <input class="form-control rounded-pill d-inline-block me-4" type="search" placeholder="Search" aria-label="Search" style="width: 230px;">
+
+    <p class="carousel-item text-white active text-center col" id="orText">or</p>
+
+    <a class="carousel-item text-white active text-center col" id="APPETIZERS" href="#">
+        <img style="height: 30px; display: inline-block;" src="ap.png" alt="Apetzers Image">
+        APETZERS
+    </a>
+
+    <a class="carousel-item active text-white text-center col" id="DESERTS" href="#">
+        <img style="background-color: white; height: 30px; display: inline-block;" src="desert.png">
+        DESERTS
+    </a>
+
+    <a class="carousel-item active text-white text-center col" id="EGG" href="#">
+        <img style="background-color: white; height: 30px; display: inline-block;" src="egg.png">
+        EGG
+    </a>
+
+    <a class="carousel-item active text-white text-center col" id="FISH" href="#">
+        <img style="background-color: white; height: 30px; display: inline-block;" src="fish.png">
+        FISH
+    </a>
+
+    <a class="carousel-item text-white active text-center col" id="MAIN" href="#">
+        <img style="background-color: white; height: 30px; display: inline-block;" src="main.png">
+        MAIN
+    </a>
+
+    <a class="carousel-item text-white text-center col" id="pizzaItem" style="display: none;" href="#">
+        <img style="background-color: white; height: 30px; display: inline-block;" src="pizza.png">
+        PIZZA
+    </a>
+
+    <a class="carousel-item text-white text-center col" id="saladItem" style="display: none;" href="#">
+        <img style="background-color: white; height: 30px; display: inline-block;" src="salad.png">
+        SALAD
+    </a>
+
+    <a class="carousel-item text-white text-center col" id="snacksItem" style="display: none;" href="#">
+        <img style="background-color: white; height: 30px; display: inline-block;" src="snacks.png">
+        SNACKS
+    </a>
+
+ 
+</div>
+<div>
+
+    <a  class="carousel-control-next" href="#carouselContent" role="button" data-slide="next" style="margin-bottom: 260px; margin-right: 95px;">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+<iframe style="margin-left: 310px; margin-top: 50px;" width="1000" height="400" src="https://www.youtube.com/embed/b8oQWjPu7Yg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h1 class="heaer text-white" style="font-family: Georgia, serif; margin-left: 400px; margin-top: 100px;">MOST EXPLOSIVE RECIPES AT DINNERMITE</h1>
+
+<div class="container" style="font-family: Georgia, serif; border-radius: 7px; margin-top: 60px;">
+  <div class="row grid-container" >
+    <div class="col-md-3" style="margin-left: 120px; margin-bottom: 10px;">
+      <div class="d-flex flex-column justify-content-center bg-white align-items-center" style="width: 230px; height: 190px; border: 2px solid #ccc;">
+        <img src="burger.jpg" alt="Image Description" style="max-width: 100%; height: 190px;">
+      </div>
+    </div>
+
+    <div class="col-md-3 bg-purple" style="margin-left: 80px;">
+      <div class="d-flex flex-column justify-content-center align-items-center bg-white" style="width: 230px; height: 190px; border: 2px solid #ccc;">
+        <p>Food is not only about sustenance but also a way of bringing people together. Sharing meals with family and friends fosters bonding and creates memorable experiences.</p>
+      </div>
+    </div>
+    <div class="col-md-3" style="margin-left: 40px;">
+      <div class="d-flex flex-column justify-content-center align-items-center bg-white" style="width: 230px; height: 190px; border: 2px solid #ccc;">
+        <img src="jocie.jpg" alt="Image Description" style="max-width: 100%; height: 180px;">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="d-flex flex-column justify-content-center align-items-center bg-white" style="width: 230px; height: 190px; border: 2px solid #ccc;">
+        <p>Food is an essential part of our lives, providing nourishment and enjoyment. It comes in various forms and flavors, catering to diverse tastes and preferences.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row grid-container">
+    <div class="col-md-3 my-2" style="margin-left: 120px;">
+      <div class="d-flex flex-column justify-content-center align-items-center bg-white" style="width: 230px; height: 190px; border: 2px solid #ccc;">
+        <p>Boiling: Cooking food in boiling water, such as boiling pasta or vegetables.
+          Grilling: Cooking food over an open flame or hot coals, like barbecuing meat or vegetables.</p>
+      </div>
+    </div>
+    <div class="col-md-3 my-2" style="margin-left: 80px;">
+      <div class="d-flex flex-column justify-content-center align-items-center bg-white" style="width: 230px; height: 190px; border: 2px solid #ccc;">
+        <img src="cup cake.jpeg" alt="Image Description" style="max-width: 100%; height: 190px;">
+      </div>
+    </div>
+    <div class="col-md-3 my-2" style="margin-left: 40px;">
+      <div class="d-flex flex-column justify-content-center align-items-center bg-white" style="width: 230px; height: 190px; border: 2px solid #ccc;">
+        <p>Dinner: The main evening meal, usually more elaborate and might include meat, vegetables, and grains.
+          Snacks: Small portions of food eaten between meals, like chips, nuts, or fruits.</p>
+      </div>
+    </div>
+    <div class="col-md-3 my-2">
+      <div class="d-flex flex-column justify-content-center align-items-center bg-white" style="width: 230px; height: 190px; border: 2px solid #ccc;">
+        <img src="gpg.jpeg" alt="Image Description" style="max-width: 100%; height: 190px;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="position: relative; font-family: Georgia, serif;">
+  <img style="margin-left: 60px; width: 1400px; margin-right: 60px; height: 700px; margin-top: 60px;" src="food.jpg">
+  <div style="position: absolute; border-radius: 14px; margin-left: 150px; margin-top: 150px; bottom: 60px; width: 350px; font-size: small; height: 400px; background-color: white; text-align: center; border: 1px solid black;">
+  <h4 style="margin-top: 40px ;"> Open contest </h4>
+  <h3> COOKIE COMPETEION </h3>
+  <p>____________</p>
+  <img src="cook.png" style="margin-top: -13px;">
+    <h6 style="position: absolute; bottom: 10px;">"Welcome to our kitchen, where flavors come alive! Join us on a culinary journey filled with delicious wonders. From sizzling grills to mouthwatering desserts, we craft culinary masterpieces that will tantalize your taste buds. Our skilled chefs blend tradition and innovation to create dishes that are a feast for the senses. Come, indulge in the art of gastronomy and experience the magic of our kitchen. Bon appétit!"</h6>
+  </div>
+</div>
+<div class="container" style="font-family: Georgia, serif;">
+  <h2 class="text-center mt-5 text-white">Latest News</h2>
+ <img src="food.png" style="margin-left: 530px;">
+ <h2 class="text-center mt-3 text-white">COMPETEION WINNER</h2>
+
+</div>
+<div class="container" style="font-family: Georgia, serif;">
+    <div class="col-sm-6" style=" align-items: center; margin-left: 100px;">
+      <div class="card d-flex flex-row" style="background-color:antiquewhite; width: 900px; height: 350px; margin-top:50px; border-radius: 15px;" >
+        <img class="card-img-left flex-shrink-0" src="pizza2.jpeg" alt="Card image cap" style="border-radius: 15px; width: 800px;">
+        <div class="card-body text-right">
+          <h5 class="card-title" style="text-align: center;">PRICK-OVEN PIZZA</h5>
+          <p class="card-text text-left">La Torcia Brick Oven Pizza opened our first location's doors in 2004. We wanted to offer you, our guests, a family friendly place to order a super product where you could dine in, let us do the cooking and clean up the mess for you!</p>
+        </div>
+      </div>
+  </div>
+</div>  
+<div style="font-family: Georgia, serif; position: relative; margin-left: 50px; margin-top: 60px;">
+  <img src="chery.jpg" style="height: 500px; width: 1400px;">
+  <div style="position: absolute; top: 140px; left: 20px; margin-left: 250px; width: 250px; height: 200px; background-color: white; z-index: 2;text-align: center; border-radius: 15px;">
+    <p style="border-radius: 15px; background-color: black; color: white;"> Recipe of the day </p>
+    <p style="color: palevioletred;"> Chinese soup </p>
+    <p style="text-align: start;"> Chinese soup is a traditional dish that comes in various flavors and styles. One popular Chinese soup is "Hot and Sour Soup," </p>
+  </div>
+  <div style="position: absolute; top: 50px; right: 20px; margin-right: 250px; width: 250px; height: 350px; background-color: white; z-index: 3;text-align: center; border: 1px solid black;"> <h1>Tips</h1> <button style="width: 180px; background-color: black; color: white;" >Add Tips</button> <p style="margin-top: 30px; color: palevioletred;">How to make burger? </p>
+    <p style="margin-top: 10px; color: palevioletred;">How to cut cake ? </p>
+    <p style="margin-top: 10px; color: palevioletred;">How to Decorate cookies? </p>
+  </div>
+  <img src="soop.jpg" style="position: absolute; top: 0; left: 220px; height: 450px; margin-top: 50px; width: 700px; z-index: 1;">
+</div>
+<div style="position: relative;">
+  <img src="black.jpg" style="width: 1520px; height: 300px;">
+  <img src="bob.png" class="img-fluid" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 300px;">
+  <p style="position: absolute; top: 240px; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">Dinnermite : Food that will make you blow !</p>
+  <p style="position: absolute; top: 260px; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">This Website made by Amr Kurdi and Zaid balout as a project for Web Programing course</p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <style>
+        .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .d-flex {
+        border-radius: 7px;
+      }
+  p:hover {
+  background-color: black;
+  color: white;
+}
+        body {
+          background-color: black;
+        
+        }
+        
+        .navbar-nav .nav-link {
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+        .custom-column {
+    margin-right: 15px;
+  }
+
+        .login-register-links {
+  display: flex;
+  align-items: center;
+}
+.login-register-links {
+  display: flex;
+  align-items: center;
+  margin-left: 1200px;
+
+}
+
+.login-register-links a {
+  margin-left: 10px;
+}
+.carousel-item {
+    padding: 0 5px;
+  }
+
+
+
+      </style>
+</body>
+</html>
