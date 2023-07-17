@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyPage17</title>
+  <style>
+    table {
+      border: 1px solid black;
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+      class MyComponent extends React.Component {
+            render() {
+                const employees = [
+                    { name: "Zead Khaled", address: "Nablus", age: 35, gender: "Male", mobile: "0599111111" },
+                    { name: "Ahmad Mohammed", address: "Ramallah", age: 30, gender: "male", mobile: "0599222222" },
+                    { name: "Maia Isa", address: "Tulkarem", age: 27, gender: "Female", mobile: "0599333333" },
+                ];
+
+                return (
+                    <div>
+                        <h1>Isra Software & Computer Co.</h1>
+                        <p>Isra' Software and computer company was established in 1997 in Nablus as a specialized in the production of software at Palestine and Arab Countries</p>
+                        <p>Includes more than 50 employees distributed in the following main departments (Research and Development, Training and Operation, Marketing and Sales, Finance, Audit and Quality)</p>
+                        <p>In addition to the company's headquarters in the city of Nablus, the company's branch was opened in Ramallah in 2004 to serve and follow-up with customers in the central and southern regions</p>
+
+                        <table>
+                            <caption>Employee list</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Mobile</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {employees.map((employee, index) => (
+                                    <tr key={index}>
+                                        <td>{employee.name}</td>
+                                        <td>{employee.address}</td>
+                                        <td>{employee.age}</td>
+                                        <td>{employee.gender}</td>
+                                        <td>{employee.mobile}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<MyComponent />, document.getElementById('root'));
+    </script>
+</body>
+</html>
