@@ -27,7 +27,7 @@ const ButtonPanel = ({ clickHandler }) => {
         <Button name="1" clickHandler={clickHandler}  />
         <Button name="2" clickHandler={clickHandler} />
         <Button name="3" clickHandler={clickHandler}  />
-        <Button name="+" clickHandler={clickHandler} orangeColor  />
+        <Button name="+" clickHandler={clickHandler} orangeColor />
       </div>
       <div className="row">
         <Button name="0" clickHandler={clickHandler} wide />
