@@ -1,0 +1,33 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .input label {
+    margin-bottom: 5px;
+  }
+  
+  .input div {
+    display: flex;
+    
+}
+  .exam-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .p-inputtext {
+    border: 2px solid #0000ff;}
+
+
+.registration-heading {
+        border-bottom: 2px solid black;
+      }
+
+#dropdown{
+
+        border: 2px solid #0000ff;
+
+    }
