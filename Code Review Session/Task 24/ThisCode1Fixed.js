@@ -13,12 +13,11 @@ function printFoodsAndDrinks() {
     }
 }
 
-function calculateAge(birthDate) {
-    var now = new Date();
-    var birthDateObj = new Date(birthDate);
-    var timeDifference = now - birthDateObj;
-    var ageInYears = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
-    console.log("Age: " + ageInYears + " years");
-}
+function calculateAge() {
+    const birthDate = new Date(1985, 1, 16);
+    const currentDate = new Date();
+    const age = currentDate.getFullYear() - birthDate.getFullYear();
+    console.log(age);
+  }
 printFoodsAndDrinks();
-calculateAge('2002-02-20');
+calculateAge();
