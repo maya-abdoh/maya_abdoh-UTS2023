@@ -44,6 +44,81 @@ My only comment is to another check, if both fahrenheit and celsius values are e
 i guess the task wasn't clear, and you handled it nicely
 Great Job.
 
+Task 13 :
+No Comment, Perfect.
+
+Task 14 :
+No Comment, Perfect.
+
+Task 15 :
+Perfect, Only Perfect.
+
+Task 16 :
+Perfect.
+My only comment dropdown doesn't work
+But Perfect.
+
+Task 17 :
+No Comment, Perfect.
+
+Task 18 :
+Good Job making all the buttons functioning, Perfect. 
+
+Task 19 :
+As uncotrolled compoenent works perfect.
+but your way to try switching from uncontrolled to controlled
+espically controlled doesn't have render
+so in using states and refernces you did it perfectly
+in switching there was a bit mistake
+Good Job.
+
+Task 20 :
+No Comment, Perfect.
+
+Task 21 :
+No Comment, Perfect.
+
+Task 22 :
+No Comment, Perfect.
+
+Task 23 :
+No Comment, Perfect.
+
+Task 24 :
+No Comment, Perfect.
+
+Task 25 :
+No Comment, Perfect.
+
+
+I have given feedback for all your tasks
+your overall performance was perfect.
+soon i will add your mark
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
