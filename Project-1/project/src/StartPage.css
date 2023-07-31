@@ -1,0 +1,30 @@
+body{
+    background-image: url('./startPage.png');
+}
+.card{
+    background-color: beige;
+    opacity: 0.7 ;
+    border-radius: 25px;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    margin-top:100px;
+    margin-left: 900px;
+}
+p{
+    font-size: 23px;
+}
+b{
+    font-size:40px ;
+}
+button{
+    background-color: #f8dd44;
+    width:80px;
+    height: 40px;
+    border-radius:10px; 
+    font-size: larger;
+    margin-top: 30px;
+}
+button:hover{
+   box-shadow: 5px 10px 18px #888888;
+}

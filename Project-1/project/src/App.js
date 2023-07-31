@@ -1,5 +1,7 @@
 import React from 'react';
 import './PaperGroupContest.css';
+import StartPage from './StartPage';
+
 function getPaperGroupData() {
   const data = {
     category1: {
@@ -72,6 +74,8 @@ function PaperGroupContest() {
   const contestData = getPaperGroupData();
 
   return (
+    <div>
+      <StartPage />
     <div className="contest-container">
       {Object.keys(contestData).map((categoryKey) => {
         const category = contestData[categoryKey];
@@ -96,7 +100,7 @@ function PaperGroupContest() {
           </div>
         );
       })}
-    </div>
+    </div></div>
   );
 }
 export default PaperGroupContest;
