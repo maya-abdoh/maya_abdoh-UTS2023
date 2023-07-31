@@ -1,0 +1,39 @@
+.contest-container {
+    text-align: center;
+  }
+  
+  .contest-container * {
+    direction: rtl;
+  }
+  
+  .answer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .answer-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .answer-row button {
+    margin: 10px; 
+    background-color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .answer-row button:first-child {
+    margin-top: 0;
+  }
+  
+  .answer-row button:last-child {
+    margin-bottom: 0;
+  }
+  
