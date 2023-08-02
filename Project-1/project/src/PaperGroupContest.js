@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PaperGroupContest.css';
 import StartPage from './StartPage';
-import { getPaperGroupData } from './PaperGroupData'; 
+import getPaperGroupData from './PaperGroupData'; 
 
 function PaperGroupContest() {
     const contestData = getPaperGroupData();
@@ -61,12 +61,12 @@ function PaperGroupContest() {
           <p>{currentQuestion.question}</p>
           <div className="answer-grid">
             <div className="answer-row">
-              <button>{currentQuestion.answer1}</button>
-              <button>{currentQuestion.answer3}</button>
+              <label>{currentQuestion.answer1}</label><br></br>
+              <label>{currentQuestion.answer3}</label>
             </div>
             <div className="answer-row">
-              <button>{currentQuestion.answer2}</button>
-              <button>{currentQuestion.answer4}</button>
+              <label>{currentQuestion.answer2}</label><br></br>
+              <label>{currentQuestion.answer4}</label>
             </div>
           </div>
         </div>
