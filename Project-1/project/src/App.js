@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import PaperGroupContest from './PaperGroupContest';
 import WhosTheMillionerContest from './WhosTheMillionerContest';
-import StartPage from './StartPage'; // Import the StartPage component
+import StartPage from './StartPage'; 
 
 function App() {
   const [selectedContest, setSelectedContest] = useState('');
@@ -15,7 +15,6 @@ function App() {
   const handleThemeChange = () => {
     setTheme(theme === 'firstTheme' ? 'secondTheme' : 'firstTheme');
   };
-
   return (
     <div className={`App ${theme}`}>
       {selectedContest === '' ? (
@@ -35,13 +34,12 @@ function App() {
         <PaperGroupContest
           onStartClick={handleSelectContest}
           theme={theme}
-          handleThemeChange={handleThemeChange} // Pass the handleThemeChange function to PaperGroupContest
+          handleThemeChange={handleThemeChange} 
         />
       ) : null}
     </div>
   );
 }
-
 export default App;
 
 
