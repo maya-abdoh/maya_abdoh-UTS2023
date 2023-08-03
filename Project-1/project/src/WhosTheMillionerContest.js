@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import WhosTheMillionerData from './WhosTheMillionerData'; // Adjust the import path based on the location of your file
+import WhosTheMillionerData from './WhosTheMillionerData'; // 
 import './WhosTheMillionerContest.css'
 
 export default function WhosTheMillionerContest() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [score, setScore] = useState(0);
     const data = WhosTheMillionerData(); // Now the data is imported correctly
     const [isAnswered, setIsAnswered] = useState(false); // To track if the user has answered the current question
   
@@ -14,15 +15,26 @@ export default function WhosTheMillionerContest() {
   
       setIsAnswered(true); // Mark the question as answered
   
+      // Calculate the new score using the functional update syntax
+      setScore((prevScore) => {
+        if (selectedAnswer === data[currentQuestion].correctAnswer) {
+          return prevScore + 1;
+        } else {
+          return prevScore;
+        }
+      });
+  
       setTimeout(() => {
         if (currentQuestion < data.length - 1) {
           setCurrentQuestion((prevQuestion) => prevQuestion + 1);
           setIsAnswered(false); // Reset the isAnswered state for the next question
-        } }, 2000); 
+        } 
+      }, 2000); 
     };
   
     return (
-      <div className='questions card'> 
+      <div className='questions card'>
+        <h5>Current Score: {score}</h5> 
         <QuestionCard
           question={data[currentQuestion].question}
           answers={[
@@ -39,6 +51,7 @@ export default function WhosTheMillionerContest() {
     );
   }
 
+
   function QuestionCard({ question, answers, correctAnswer, handleAnswer, isAnswered }) {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
@@ -49,7 +62,7 @@ export default function WhosTheMillionerContest() {
 
   return (
     <div>
-      <h4>{question}</h4>
+      <h5>{question}</h5>
       <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         {answers.map((answer, index) => {
           const isCorrect = `answer${index + 1}` === correctAnswer;

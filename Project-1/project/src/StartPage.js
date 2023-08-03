@@ -17,8 +17,9 @@ function StartPage(props) {
   return (
     <div className={theme}>
       <button className="theme" onClick={onThemeChange}>Change Theme</button>
+      <div className="container">
       <div className="card">
-        <b>شارك الآن</b>
+        <b>المسابقة الورقية</b>
         <p>
           هل أنتم مستعدون لاختبار معارفكم وتحدي ذكائكم؟ انضموا إلينا في مسابقة
           ممتعة ومثيرة تتيح لكم فرصة الفوز بجوائز قيمة! ستتاح لكم فرصة اختبار
@@ -28,6 +29,16 @@ function StartPage(props) {
           ابدأ
         </button>
       </div>
+      <div className="card second">
+        <b>من سيربح المليون</b>
+        <p>
+        انضم إلى مسابقتنا "من سيربح المليون" واحصل على فرصة للفوز بجائزة مغرية قد تصل إلى المليون,
+        سيتم تقديم الأسئلة بشكل ممتع ومشوق، وستتاح لك الفرصة للتألق وإظهار معرفتك
+        </p>
+        <button className="start" onClick={handleStartClick}>
+          ابدأ
+        </button>
+      </div></div>
     </div>
   );
 }
