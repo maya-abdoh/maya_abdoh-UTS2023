@@ -31,6 +31,8 @@ export function getFamilyFeudData() {
             answer4: { answer: 'فتح مكة', mark: 15 },
             answer5: { answer: 'غزوة مؤتة', mark: 10 },
             answer6: { answer: 'ذات الرقاع', mark: 5 },
+            answer7: { answer: '', mark: 0 },
+            answer8: { answer: '', mark: 0 },
         },
 
     ]
