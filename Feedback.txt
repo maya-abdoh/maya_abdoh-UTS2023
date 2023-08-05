@@ -2,67 +2,85 @@ First i want to thank you for the orginaized work, it shows how much you cares a
 
 Task 1 :
 Some notes but neglectable, Excellecnt Work.
+4/4
 
 Task 2 :
 You're one of the few who didnt overstrech the tables, thank you
 instead of having all the lines in one paragaph, you can have each line in a paragraph
 and have them all in one div to give it the style 
 Otherwise Great Work
+4/4
 
 Task 3 : 
 No Comment, Perfect.
+4/4
 
 Task 4 :
 after all the tasks i reviewed, you're one of the few who got the task right.
 Good job.
+4/4
 
 Task 5 : 
 No Comment, Perfect.
+4/4
 
 Task 6 : 
 No Comment, Perfect.
+4/4
 
 Task 7 :
 Some notes but neglectable, Excellecnt Work.
+4/4
 
 Task 8 :
 No Comment, Perfect.
+4/4
 
 Task 9 : 
 Some notes but neglectable, Excellecnt Work.
 These Notes About Responsive BTW.
+4/4
 
 Task 10 :
 File Naming is cruical in the field, it helps a lot in maintaining, reusing, and when someone else uses our code.
 Arabic And English File names is flipped, Otherwise Perfect.
+3/4
 
 Task 11 :
 No Comment, Perfect.
+4/4
 
 Task 12 :
 My only comment is to another check, if both fahrenheit and celsius values are entered return error
 i guess the task wasn't clear, and you handled it nicely
 Great Job.
+4/4
 
 Task 13 :
 No Comment, Perfect.
+4/4
 
 Task 14 :
 No Comment, Perfect.
+4/4
 
 Task 15 :
 Perfect, Only Perfect.
+4/4
 
 Task 16 :
 Perfect.
 My only comment dropdown doesn't work
 But Perfect.
+3.5/4
 
 Task 17 :
 No Comment, Perfect.
+4/4
 
 Task 18 :
 Good Job making all the buttons functioning, Perfect. 
+4/4
 
 Task 19 :
 As uncotrolled compoenent works perfect.
@@ -71,29 +89,38 @@ espically controlled doesn't have render
 so in using states and refernces you did it perfectly
 in switching there was a bit mistake
 Good Job.
+3/4
 
 Task 20 :
 No Comment, Perfect.
+4/4
 
 Task 21 :
 No Comment, Perfect.
+4/4
 
 Task 22 :
 No Comment, Perfect.
+4/4
 
 Task 23 :
 No Comment, Perfect.
+4/4
 
 Task 24 :
 No Comment, Perfect.
+4/4
 
 Task 25 :
 No Comment, Perfect.
+4/4
 
 
 I have given feedback for all your tasks
 your overall performance was perfect.
-soon i will add your mark
+
+97.5/100
+19.5/20
 
 
 
