@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { getFamilyFeudData } from './getFamilyFeudData';
+import React, { useState } from 'react';import { getFamilyFeudData } from './getFamilyFeudData';
 import './FamilyFeudContest.css';
 
 function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
@@ -9,11 +8,27 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
   const [scoreTeam2, setScoreTeam2] = useState(0);
   const [tempScore, setTempScore] = useState(0);
   const [levelCoefficient, setLevelCoefficient] = useState(1);
-  const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
+  const [clickedButtonIndexes, setClickedButtonIndexes] = useState([]);
 
   const handleAnswerClick = (mark, buttonIndex) => {
-    setTempScore(tempScore + mark * levelCoefficient);
-    setClickedButtonIndex(buttonIndex);
+    if (clickedButtonIndexes.includes(buttonIndex)) {
+      return;
+    }
+
+    let newTempScore = tempScore;
+    if (clickedButtonIndexes.length > 0) {
+      newTempScore -= clickedButtonIndexes.reduce(
+        (totalMark, index) => totalMark + answers[index].mark * levelCoefficient,
+        0
+      );
+    }
+
+    if (!clickedButtonIndexes.includes(buttonIndex)) {
+      newTempScore += mark * levelCoefficient;
+    }
+
+    setClickedButtonIndexes([...clickedButtonIndexes, buttonIndex]);
+    setTempScore(newTempScore);
   };
 
   const handleScoreboardClick = (scoreToAdd) => {
@@ -25,15 +40,16 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
     setTempScore(0);
     setLevelCoefficient(1);
     setCurrentQuestion(currentQuestion + 1);
+    setClickedButtonIndexes([]);
   };
 
   const handleLevelCoefficientChange = () => {
     setLevelCoefficient(levelCoefficient + 1);
   };
-
   const handleBackToStartClick = () => {
     onStartClick('');
   };
+
 
   const currentData = data[currentQuestion];
   const answers = [
@@ -54,29 +70,25 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
         <h4>Family Feud Contest</h4>
         <div className="question">
           <h5>{currentData.question}</h5>
-          <div className="answers">
-            <table>
-              <tbody>
-                {Array.from({ length: 4 }).map((_, rowIndex) => (
-                  <tr key={rowIndex}>
-                    {Array.from({ length: 2 }).map((_, colIndex) => {
-                      const answerIndex = rowIndex * 2 + colIndex;
-                      const answer = answers[answerIndex];
-                      return (
-                        <td key={answerIndex}>
-                          <button
-                            className={`start answer-button ${clickedButtonIndex === answerIndex ? 'clicked' : ''}`}
-                            onClick={() => handleAnswerClick(answer.mark, answerIndex)}
-                          >
-                            {answer.answer}
-                          </button>
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="answers-grid">
+            {Array.from({ length: 4 }).map((_, rowIndex) => (
+              <div key={rowIndex}>
+                {Array.from({ length: 2 }).map((_, colIndex) => {
+                  const answerIndex = rowIndex * 2 + colIndex;
+                  const answer = answers[answerIndex];
+                  return (
+                    <div key={answerIndex}>
+                      <button
+                        className={`start answer-button ${clickedButtonIndexes.includes(answerIndex) ? 'clicked' : ''}`}
+                        onClick={() => handleAnswerClick(answer.mark, answerIndex)}
+                      >
+                        {answer.answer}
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
