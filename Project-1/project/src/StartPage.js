@@ -25,7 +25,6 @@ function StartPage(props) {
           <p>
             هل أنتم مستعدون لاختبار معارفكم وتحدي ذكائكم؟ انضموا إلينا في مسابقة
             ممتعة ومثيرة تتيح لكم فرصة الفوز بجوائز قيمة! ستتاح لكم فرصة اختبار
-            معلوماتكم حول التاريخ الوطني والثقافة الدينية لبلدنا الحبيب
           </p>
           <button className="start" onClick={() => handleStartClick("paperGroup")}>
             ابدأ
@@ -39,6 +38,17 @@ function StartPage(props) {
             وإظهار معرفتك
           </p>
           <button className="start" onClick={() => handleStartClick("whosTheMillioner")}>
+            ابدأ
+          </button>
+        </div>
+        <div className="card third">
+          <b>فاميلي فيود</b>
+          <p>
+            هل أنتم مستعدون للاستمتاع بمسابقة "فاميلي فيود" الممتعة؟ اختبر معارفك وتوقع
+            إجابات الجمهور في هذه المسابقة الشيقة. ستتحدى فيها أفراد عائلتين للفوز
+            بالنقاط والمرح.
+          </p>
+          <button className="start" onClick={() => handleStartClick("familyFeud")}>
             ابدأ
           </button>
         </div>

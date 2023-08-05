@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import PaperGroupContest from './PaperGroupContest';
 import WhosTheMillionerContest from './WhosTheMillionerContest';
-import StartPage from './StartPage'; 
+import StartPage from './StartPage';
+import FamilyFeudContest from './FamilyFeudContest';
 
 function App() {
   const [selectedContest, setSelectedContest] = useState('');
@@ -15,6 +16,11 @@ function App() {
   const handleThemeChange = () => {
     setTheme(theme === 'firstTheme' ? 'secondTheme' : 'firstTheme');
   };
+
+  const handleBackToStartClick = () => {
+    setSelectedContest('');
+  };
+
   return (
     <div className={`App ${theme}`}>
       {selectedContest === '' ? (
@@ -25,14 +31,20 @@ function App() {
         />
       ) : selectedContest === 'whosTheMillioner' ? (
         <WhosTheMillionerContest
-          onStartClick={handleSelectContest}
+          onStartClick={handleBackToStartClick}
           showQuestions={true}
           theme={theme}
           handleThemeChange={handleThemeChange}
         />
       ) : selectedContest === 'paperGroup' ? (
         <PaperGroupContest
-          onStartClick={handleSelectContest}
+          onStartClick={handleBackToStartClick}
+          theme={theme}
+          handleThemeChange={handleThemeChange} 
+        />
+      ) : selectedContest === 'familyFeud' ? (
+        <FamilyFeudContest
+          onStartClick={handleBackToStartClick}
           theme={theme}
           handleThemeChange={handleThemeChange} 
         />
@@ -40,6 +52,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
-
-

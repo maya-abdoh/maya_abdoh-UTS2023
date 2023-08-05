@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './WhosTheMillionerContest.css';
-import StartPage from './StartPage'; // Import the StartPage component
+import StartPage from './StartPage';
 import WhosTheMillionerData from './WhosTheMillionerData';
 
 export default function WhosTheMillionerContest({ onStartClick, showQuestions, theme, handleThemeChange }) {
