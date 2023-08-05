@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './WhosTheMillionerContest.css';
-import StartPage from './StartPage';
+import StartPage from '../Start/StartPage';
 import WhosTheMillionerData from './WhosTheMillionerData';
 
 export default function WhosTheMillionerContest({ onStartClick, showQuestions, theme, handleThemeChange }) {
@@ -18,6 +18,10 @@ export default function WhosTheMillionerContest({ onStartClick, showQuestions, t
     );
   }
   
+  const handleBackToStartClick = () => {
+    onStartClick('');
+  };
+
   const handleAnswer = (selectedAnswer) => {
     if (isAnswered) {
       return; 
@@ -50,7 +54,10 @@ export default function WhosTheMillionerContest({ onStartClick, showQuestions, t
   };
 
   return (
+    <div>
+      <button style={{width:'150px', marginRight:'1000px'}} className='start' onClick={handleBackToStartClick}>الصفحة الرئيسية</button>
     <div className='questions card'>
+      <h3>من سيربح المليون</h3>
       <h5>Current Score: {score}</h5>
       <QuestionCard
         question={data[currentQuestion].question}
@@ -66,6 +73,7 @@ export default function WhosTheMillionerContest({ onStartClick, showQuestions, t
         selectedAnswer={selectedAnswers[currentQuestion]}
         isAnswerCorrect={isAnswerCorrect}
       />
+    </div>
     </div>
   );
 }

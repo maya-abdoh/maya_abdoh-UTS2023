@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getFamilyFeudData } from './getFamilyFeudData';
+import './FamilyFeudContest.css';
 
 function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
   const [data] = useState(getFamilyFeudData());
@@ -8,9 +9,11 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
   const [scoreTeam2, setScoreTeam2] = useState(0);
   const [tempScore, setTempScore] = useState(0);
   const [levelCoefficient, setLevelCoefficient] = useState(1);
+  const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
 
-  const handleAnswerClick = (mark) => {
+  const handleAnswerClick = (mark, buttonIndex) => {
     setTempScore(tempScore + mark * levelCoefficient);
+    setClickedButtonIndex(buttonIndex);
   };
 
   const handleScoreboardClick = (scoreToAdd) => {
@@ -46,35 +49,54 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
 
   return (
     <div className={`familyFeudContest ${theme}`}>
-      <h1>Family Feud Contest</h1>
-      <div className="question">
-        <h2>Question: {currentData.question}</h2>
-        <div className="answers">
-          {answers.map((answer, index) => (
-            <button key={index} onClick={() => handleAnswerClick(answer.mark)}>
-              {answer.answer}
-            </button>
-          ))}
+      <button style={{ width: '150px', marginRight: '1000px' }} className='start' onClick={handleBackToStartClick}>الصفحة الرئيسية</button>
+      <div className='questions card'>
+        <h4>Family Feud Contest</h4>
+        <div className="question">
+          <h5>{currentData.question}</h5>
+          <div className="answers">
+            <table>
+              <tbody>
+                {Array.from({ length: 4 }).map((_, rowIndex) => (
+                  <tr key={rowIndex}>
+                    {Array.from({ length: 2 }).map((_, colIndex) => {
+                      const answerIndex = rowIndex * 2 + colIndex;
+                      const answer = answers[answerIndex];
+                      return (
+                        <td key={answerIndex}>
+                          <button
+                            className={`start answer-button ${clickedButtonIndex === answerIndex ? 'clicked' : ''}`}
+                            onClick={() => handleAnswerClick(answer.mark, answerIndex)}
+                          >
+                            {answer.answer}
+                          </button>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       <div className="scoreboards">
         <div className="scoreboard">
-          <h3>Team 1 Score: {scoreTeam1}</h3>
+          <h5>Team 1 Score: {scoreTeam1}</h5>
         </div>
         <div className="scoreboard">
-          <h3>Team 2 Score: {scoreTeam2}</h3>
+          <h5>Team 2 Score: {scoreTeam2}</h5>
         </div>
       </div>
       <div className="temp-scoreboard">
-        <h3>Temporary Score: {tempScore}</h3>
+        <h5>Temporary Score: {tempScore}</h5>
         <button onClick={() => handleScoreboardClick(1)}>Add to Team 1</button>
         <button onClick={() => handleScoreboardClick(-1)}>Add to Team 2</button>
       </div>
       <div className="level-coefficient">
-        <h3>Level Coefficient: {levelCoefficient}</h3>
+        <h5>Level Coefficient: {levelCoefficient}</h5>
         <button onClick={handleLevelCoefficientChange}>Increase Level</button>
       </div>
-      <button onClick={handleBackToStartClick}>Back to Start</button>
     </div>
   );
 }

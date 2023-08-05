@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './PaperGroupContest.css';
-import StartPage from './StartPage';
+import StartPage from '../Start/StartPage';
 import getPaperGroupData from './PaperGroupData';
 
 function PaperGroupContest({ onStartClick, theme, handleThemeChange }) {
@@ -37,6 +37,10 @@ function PaperGroupContest({ onStartClick, theme, handleThemeChange }) {
     }
   };
 
+  const handleBackToStartClick = () => {
+    onStartClick('');
+  };
+  
   const isLastQuestion = currentQuestionIndex === category.questions.length - 1;
   const isFirstQuestion = currentQuestionIndex === 0;
   const currentQuestion = category.questions[currentQuestionIndex];
@@ -51,6 +55,7 @@ function PaperGroupContest({ onStartClick, theme, handleThemeChange }) {
   return (
     <div className={`PaperGroupContest ${theme}`}>
       <StartPage theme={theme} onThemeChange={handleThemeChange} />
+      <button style={{width:'150px', marginRight:'1000px'}} className='start' onClick={handleBackToStartClick}>الصفحة الرئيسية</button>
       <div className="contest-container">
         <div className='card questions'>
           <h2>{category.categoryTitle}</h2>

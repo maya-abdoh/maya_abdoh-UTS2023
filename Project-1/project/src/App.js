@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import PaperGroupContest from './PaperGroupContest';
-import WhosTheMillionerContest from './WhosTheMillionerContest';
-import StartPage from './StartPage';
-import FamilyFeudContest from './FamilyFeudContest';
+import PaperGroupContest from './PaperGroup/PaperGroupContest';
+import WhosTheMillionerContest from './WhosTheMillioner/WhosTheMillionerContest';
+import StartPage from './Start/StartPage';
+import FamilyFeudContest from './FamilyFeud/FamilyFeudContest';
 
 function App() {
   const [selectedContest, setSelectedContest] = useState('');

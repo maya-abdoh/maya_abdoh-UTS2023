@@ -20,8 +20,8 @@ export function getFamilyFeudData() {
             answer4: { answer: 'الزهرة', mark: 10 },
             answer5: { answer: 'الارض', mark: 10 },
             answer6: { answer: 'المريخ', mark: 10 },
-            answer6: { answer: 'عطارد', mark: 10 },
-            answer6: { answer: 'زحل', mark: 10 },
+            answer7: { answer: 'عطارد', mark: 10 },
+            answer8: { answer: 'زحل', mark: 10 },
         },
         {
             question: 'أخر 6 غزوات للرسول ',
