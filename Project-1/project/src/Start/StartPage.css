@@ -20,6 +20,7 @@
     height: 40px;
     border-radius:10px;
     margin-top: 30px;
+    margin-left: 80%;
 }
 .card{
     background-color: beige;
@@ -28,8 +29,7 @@
     width: 400px;
     height: 400px;
     padding: 20px;
-    margin-top:100px;
-    margin-left: 85px;
+    margin-bottom: 120px;
     direction: rtl;
     text-align: center;
 }
@@ -39,6 +39,7 @@
 }
 .container{
     display: flex;
+    margin-left: 55%;
 }
 
 .questions{

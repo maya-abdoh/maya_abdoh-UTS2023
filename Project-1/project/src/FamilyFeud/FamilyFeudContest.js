@@ -175,9 +175,9 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
         {showWinner && (
           <div>
             {teamScores.team1 > teamScores.team2 ? (
-              <h2> الفريق الاول فاز !</h2>
+              <h2>الفريق الاول هو الفائز!</h2>
             ) : teamScores.team2 > teamScores.team1 ? (
-              <h2>الفريق الثاني فاز !</h2>
+              <h2>الفريق الثاني هو الفائز!</h2>
             ) : (
               <h2>تعادل!</h2>
             )}
