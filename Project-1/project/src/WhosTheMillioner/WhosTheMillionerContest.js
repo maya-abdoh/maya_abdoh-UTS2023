@@ -58,7 +58,7 @@ export default function WhosTheMillionerContest({ onStartClick, showQuestions, t
       <button style={{width:'150px', marginRight:'1000px'}} className='start' onClick={handleBackToStartClick}>الصفحة الرئيسية</button>
     <div className='questions card'>
       <h3>من سيربح المليون</h3>
-      <h5>Current Score: {score}</h5>
+      <h5>مجموع النقاط: {score}</h5>
       <QuestionCard
         question={data[currentQuestion].question}
         answers={[

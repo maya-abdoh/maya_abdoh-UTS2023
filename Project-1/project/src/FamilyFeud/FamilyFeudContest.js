@@ -47,11 +47,11 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
   const handleScoreboardClick = () => {
     if (currentQuestion === 2) {
       if (teamScores.team1 > teamScores.team2) {
-        alert("فريق 1 فاز!");
+        alert('فريق 1 فاز!');
       } else if (teamScores.team2 > teamScores.team1) {
-        alert("فريق 2 فاز!");
+        alert('فريق 2 فاز!');
       } else {
-        alert("تعادل!");
+        alert('تعادل!');
       }
     }
     setCurrentQuestion(currentQuestion + 1);
@@ -90,6 +90,8 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
     setShowWinner(true);
   };
 
+  const lastQuestionIndex = data.length - 1;
+
   return (
     <div className={`familyFeudContest ${theme}`}>
       <button
@@ -97,9 +99,9 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
         className='start'
         onClick={handleBackToStartClick}
       >
-         الصفحة الرئيسية
+        الصفحة الرئيسية
       </button>
-      <button style={{ backgroundColor: '#f8dd44', color: 'black', padding: '10px 20px', fontSize: '20px', borderRadius: '10px', marginBottom: '10px' ,width:'155px' }} onClick={handleShowWinnerClick}> اظهر الفائز </button>
+     
       <div className='questions card familyFued'>
         <div className='header'>
           <button
@@ -108,7 +110,7 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
           >
             نقاط الفريق 1: {teamScores.team1}
           </button>
-          <h4>Family Feud Contest</h4>
+          <h4>فاميلي فيود</h4>
           <button
             className='score team2'
             onClick={() => handleTeamScoreClick('team2')}
@@ -146,14 +148,30 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
           </div>
         </div>
         <h5>
-          <button onClick={handleLevelCoefficientMinus}>-</button> Level
-          Coefficient: {levelCoefficient} <button onClick={handleLevelCoefficientAdd}>+</button>
+          <button onClick={handleLevelCoefficientMinus}>-</button> المستوى: {levelCoefficient}{' '}
+          <button onClick={handleLevelCoefficientAdd}>+</button>
         </h5>
         {currentQuestion < data.length - 1 && (
-          <button className="next-question" onClick={handleScoreboardClick}>
-            Next Question
+          <button className='next-question' onClick={handleScoreboardClick}>
+            السؤال التالي
           </button>
         )}
+         {currentQuestion === lastQuestionIndex && (
+        <button
+          style={{
+            backgroundColor: '#f8dd44',
+            color: 'black',
+            padding: '10px 20px',
+            fontSize: '20px',
+            borderRadius: '10px',
+            marginBottom: '10px',
+            width: '155px',
+          }}
+          onClick={handleShowWinnerClick}
+        >
+          اظهر الفائز
+        </button>
+      )}
         {showWinner && (
           <div>
             {teamScores.team1 > teamScores.team2 ? (

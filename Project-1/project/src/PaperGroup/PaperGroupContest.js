@@ -75,14 +75,14 @@ function PaperGroupContest({ onStartClick, theme, handleThemeChange }) {
           <div className="navigation-buttons">
             <button onClick={handleNextQuestion}>
               {isLastQuestion && currentCategoryKey !== categoryKeys[categoryKeys.length - 1]
-                ? 'Next Question'
-                : 'Next Question'}
+                ? 'السؤال التالي'
+                : 'السؤال التالي'}
             </button>
             {currentQuestionIndex === 0 && currentCategoryKey !== categoryKeys[0] && (
-              <button onClick={handlePreviousQuestion}>Previous Question</button>
+              <button onClick={handlePreviousQuestion}>السؤال السابق</button>
             )}
             {!isFirstQuestion && (
-              <button onClick={handlePreviousQuestion}>Previous Question</button>
+              <button onClick={handlePreviousQuestion}>السؤال السابق</button>
             )}
           </div>
         </div>
