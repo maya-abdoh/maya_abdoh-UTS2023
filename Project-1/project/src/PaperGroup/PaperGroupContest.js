@@ -28,7 +28,7 @@ function PaperGroupContest({ onStartClick, theme, handleThemeChange }) {
   const handleNextQuestion = () => {
     if (currentQuestionIndex < category.questions.length - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
-      setCurrentAnswerIndex(-1); // Reset currentAnswerIndex
+      setCurrentAnswerIndex(-1); 
       setShowLabels([]);
       revealLabels();
     } else {
@@ -36,7 +36,7 @@ function PaperGroupContest({ onStartClick, theme, handleThemeChange }) {
       if (currentIndex < categoryKeys.length - 1) {
         setCurrentCategoryKey(categoryKeys[currentIndex + 1]);
         setCurrentQuestionIndex(0);
-        setCurrentAnswerIndex(-1); // Reset currentAnswerIndex
+        setCurrentAnswerIndex(-1); 
         setShowLabels([]);
         revealLabels();
       }
@@ -46,7 +46,7 @@ function PaperGroupContest({ onStartClick, theme, handleThemeChange }) {
   const handlePreviousQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex((prevIndex) => prevIndex - 1);
-      setCurrentAnswerIndex(-1); // Reset currentAnswerIndex
+      setCurrentAnswerIndex(-1); 
       revealLabels(0);
     } else {
       const currentIndex = categoryKeys.indexOf(currentCategoryKey);
@@ -54,7 +54,7 @@ function PaperGroupContest({ onStartClick, theme, handleThemeChange }) {
         setCurrentCategoryKey(categoryKeys[currentIndex - 1]);
         const prevCategory = contestData[categoryKeys[currentIndex - 1]];
         setCurrentQuestionIndex(prevCategory.questions.length - 1);
-        setCurrentAnswerIndex(-1); // Reset currentAnswerIndex
+        setCurrentAnswerIndex(-1);
         revealLabels(0);
       }
     }
@@ -85,7 +85,7 @@ function PaperGroupContest({ onStartClick, theme, handleThemeChange }) {
   return (
     <div className={`PaperGroupContest ${theme}`}>
       <StartPage theme={theme} onThemeChange={handleThemeChange} />
-      <button style={{ width: '150px', marginRight: '1000px' }} className='start' onClick={handleBackToStartClick}>الصفحة الرئيسية</button>
+      <button style={{width:'150px', marginRight:'1000px'}} className='start' onClick={handleBackToStartClick}>الصفحة الرئيسية</button>
       <div className="contest-container">
         <div className='card questions'>
           <h2>{category.categoryTitle}</h2>
@@ -94,24 +94,20 @@ function PaperGroupContest({ onStartClick, theme, handleThemeChange }) {
             <div className="answer-grid">
               <div className="answer-row">
                 {showLabels.includes(0) && <label>{currentQuestion.answer1}</label>}
-                <br></br>
                 {showLabels.includes(1) && <label>{currentQuestion.answer2}</label>}
               </div>
               <div className="answer-row">
                 {showLabels.includes(2) && <label>{currentQuestion.answer3}</label>}
-                <br></br>
                 {showLabels.includes(3) && <label>{currentQuestion.answer4}</label>}
               </div>
             </div>
           </div>
           <div className="navigation-buttons">
-            {!isLastQuestion && (
-              <button onClick={handleNextQuestion}>
-                {currentCategoryKey !== categoryKeys[categoryKeys.length - 1]
-                  ? 'السؤال التالي'
-                  : 'السؤال التالي'}
-              </button>
-            )}
+            <button onClick={handleNextQuestion}>
+              {isLastQuestion && currentCategoryKey !== categoryKeys[categoryKeys.length - 1]
+                ? 'السؤال التالي'
+                : 'السؤال التالي'}
+            </button>
             {currentQuestionIndex === 0 && currentCategoryKey !== categoryKeys[0] && (
               <button onClick={handlePreviousQuestion}>السؤال السابق</button>
             )}
