@@ -13,6 +13,7 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
   const [tempScore, setTempScore] = useState(0);
   const [levelCoefficient, setLevelCoefficient] = useState(1);
   const [clickedButtonIndexes, setClickedButtonIndexes] = useState([]);
+  const [selectedAnswersIndexes, setSelectedAnswersIndexes] = useState([]); 
 
   const handleAnswerClick = (mark, buttonIndex) => {
     if (clickedButtonIndexes.includes(buttonIndex)) {
@@ -33,15 +34,23 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
 
     setClickedButtonIndexes([...clickedButtonIndexes, buttonIndex]);
     setTempScore(newTempScore);
+
+    setSelectedAnswersIndexes((prevIndexes) =>
+      prevIndexes.includes(buttonIndex)
+        ? prevIndexes.filter((index) => index !== buttonIndex)
+        : [...prevIndexes, buttonIndex]
+    );
   };
 
   const handleTeamScoreClick = (team) => {
-    setTeamScores((prevTeamScores) => ({
-      ...prevTeamScores,
-      [team]: prevTeamScores[team] + tempScore,
-    }));
-    setTempScore(0);
-    setClickedButtonIndexes([]);
+    if (selectedAnswersIndexes.length > 0) {
+      setTeamScores((prevTeamScores) => ({
+        ...prevTeamScores,
+        [team]: prevTeamScores[team] + tempScore,
+      }));
+      setTempScore(0);
+      setClickedButtonIndexes([]);
+    }
   };
 
   const handleScoreboardClick = () => {
@@ -101,7 +110,7 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
       >
         الصفحة الرئيسية
       </button>
-     
+
       <div className='questions card familyFued'>
         <div className='header'>
           <button
@@ -126,17 +135,20 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
                 {Array.from({ length: 2 }).map((_, colIndex) => {
                   const answerIndex = rowIndex * 2 + colIndex;
                   const answer = answers[answerIndex];
+                  const isSelected = selectedAnswersIndexes.includes(
+                    answerIndex
+                  ); 
+
                   return (
                     <div key={answerIndex}>
                       <button
                         className={`start answer-button ${
-                          clickedButtonIndexes.includes(answerIndex)
+                          clickedButtonIndexes.includes(answerIndex) ||
+                          isSelected 
                             ? 'clicked'
                             : ''
                         }`}
-                        onClick={() =>
-                          handleAnswerClick(answer.mark, answerIndex)
-                        }
+                        onClick={() => handleAnswerClick(answer.mark, answerIndex)}
                       >
                         {answer.answer}
                       </button>
@@ -156,22 +168,22 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
             السؤال التالي
           </button>
         )}
-         {currentQuestion === lastQuestionIndex && (
-        <button
-          style={{
-            backgroundColor: '#f8dd44',
-            color: 'black',
-            padding: '10px 20px',
-            fontSize: '20px',
-            borderRadius: '10px',
-            marginBottom: '10px',
-            width: '155px',
-          }}
-          onClick={handleShowWinnerClick}
-        >
-          اظهر الفائز
-        </button>
-      )}
+        {currentQuestion === lastQuestionIndex && (
+          <button
+            style={{
+              backgroundColor: '#f8dd44',
+              color: 'black',
+              padding: '10px 20px',
+              fontSize: '20px',
+              borderRadius: '10px',
+              marginBottom: '10px',
+              width: '155px',
+            }}
+            onClick={handleShowWinnerClick}
+          >
+            اظهر الفائز
+          </button>
+        )}
         {showWinner && (
           <div>
             {teamScores.team1 > teamScores.team2 ? (
