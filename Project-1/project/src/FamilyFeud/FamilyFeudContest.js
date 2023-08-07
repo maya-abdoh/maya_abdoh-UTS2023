@@ -14,7 +14,16 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
   const [levelCoefficient, setLevelCoefficient] = useState(1);
   const [clickedButtonIndexes, setClickedButtonIndexes] = useState([]);
   const [selectedAnswersIndexes, setSelectedAnswersIndexes] = useState([]); 
+  const [X1clickCount, setX1ClickCount] = useState(0);
+  const [X2clickCount, setX2ClickCount] = useState(0);
 
+  const handleButtonX1Click = () => {
+    setX1ClickCount(X1clickCount + 1);
+  };
+
+  const handleButtonX2Click = () => {
+    setX2ClickCount(X2clickCount + 1);
+  };
   const handleAnswerClick = (mark, buttonIndex) => {
     if (clickedButtonIndexes.includes(buttonIndex)) {
       return;
@@ -54,15 +63,6 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
   };
 
   const handleScoreboardClick = () => {
-    if (currentQuestion === 2) {
-      if (teamScores.team1 > teamScores.team2) {
-        alert('فريق 1 فاز!');
-      } else if (teamScores.team2 > teamScores.team1) {
-        alert('فريق 2 فاز!');
-      } else {
-        alert('تعادل!');
-      }
-    }
     setCurrentQuestion(currentQuestion + 1);
     setClickedButtonIndexes([]);
   };
@@ -119,6 +119,9 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
           >
             نقاط الفريق 1: {teamScores.team1}
           </button>
+          <button className='score team1 X' onClick={handleButtonX1Click}>
+  X: {X1clickCount}
+</button>
           <h4>فاميلي فيود</h4>
           <button
             className='score team2'
@@ -126,6 +129,7 @@ function FamilyFeudContest({ onStartClick, theme, handleThemeChange }) {
           >
             نقاط الفريق 2: {teamScores.team2}
           </button>
+          <button className='score team2 X' onClick={handleButtonX2Click}>X: {X2clickCount}</button>
         </div>
         <div className='question'>
           <h5>{currentData.question}</h5>
